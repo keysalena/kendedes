@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendedes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1A4CAD;
+            --secondary-color: #2C7BE5;
+            --light-color: #E9F0F7;
+            --dark-color: #0A2342;
+            --accent-color: #6AA2F0;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        .map-container iframe {
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            transform: skewY(-6deg);
+            transform-origin: top left;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            transform: translateX(-50%);
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card .card-img-top {
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .why-choose-section {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            color: white;
+            padding: 80px 0;
+        }
+
+        .why-choose-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .why-choose-item:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-section {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .btn-custom {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .animated.bounceInDown {
+            animation-name: bounceInDown;
+        }
+
+        .animated.fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        .animated.zoomIn {
+            animation-name: zoomIn;
+        }
+
+        .animated.slideInUp {
+            animation-name: slideInUp;
+        }
+
+        .animated.pulse {
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bounceInDown {
+
+            0%,
+            60%,
+            75%,
+            90%,
+            100% {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                transform: translateY(-300px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(25px);
+            }
+
+            75% {
+                transform: translateY(-10px);
+            }
+
+            90% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero fade-in">
+        <div class="container">
+            <h1 class="display-4 mb-3 fw-bold animate__animated animate__bounceInDown">KENDEDES</h1>
+            <p class="lead mb-4 animated fadeInUp">Mitra terpercaya Anda dalam menyediakan produk berkualitas tinggi untuk kebutuhan industri dan rumah tangga.</p>
+            <a href="#products" class="btn btn-custom btn-lg animated pulse infinite">Lihat Produk</a>
+        </div>
+    </header>
+
+
+    <!-- Tentang Kami -->
+    <section class="container py-5 fade-in-on-scroll">
+        <h2 class="text-center section-title">Tentang Kami</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <p class="text-muted">Kami berdedikasi untuk menghadirkan wood pellet, shuttlecock, dan briket yang memenuhi standar mutu terbaik dan ramah lingkungan. Dengan pengalaman bertahun-tahun di industri ini, kami berkomitmen untuk memberikan pelayanan terbaik dan produk yang sesuai dengan kebutuhan Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk Kami -->
+    <section id="products" class="container py-5 fade-in-on-scroll">
+        <h2 class="text-center section-title">Produk Kami</h2>
+        <div class="row g-4">
+            <!-- Wood Pellet -->
+            <div class="col-md-4">
+                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
+                    <img src="img/wood.png" class="card-img-top" alt="Wood Pellet">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Wood Pellet</h5>
+                        <p class="card-text text-muted">Wood pellet adalah bahan bakar ramah lingkungan yang terbuat dari serbuk kayu terkompresi. Ideal untuk sistem pemanas dan pembangkit energi yang efisien dan berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shuttlecock -->
+            <div class="col-md-4">
+                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
+                    <img src="img/kok.png" class="card-img-top" alt="Shuttlecock">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Shuttlecock</h5>
+                        <p class="card-text text-muted">Pilihan tepat untuk olahraga bulutangkis Anda, dengan kualitas premium dan presisi tinggi.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Briket -->
+            <div class="col-md-4">
+                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
+                    <img src="img/bk.png" class="card-img-top" alt="Briket">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Briket</h5>
+                        <p class="card-text text-muted">Energi alternatif yang ekonomis dan ramah lingkungan, ideal untuk kebutuhan rumah tangga dan industri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mengapa Memilih Kami -->
+    <section class="why-choose-section fade-in-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white">Mengapa Memilih Kami?</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
+                    <div class="why-choose-item text-center">
+                        <i class="fas fa-check-circle fa-3x mb-3"></i>
+                        <h4 class="mb-3">Kualitas Terjamin</h4>
+                        <p>Setiap produk melalui proses kontrol kualitas yang ketat.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
+                    <div class="why-choose-item text-center">
+                        <i class="fas fa-tags fa-3x mb-3"></i>
+                        <h4 class="mb-3">Harga Kompetitif</h4>
+                        <p>Harga terbaik tanpa mengorbankan kualitas.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
+                    <div class="why-choose-item text-center">
+                        <i class="fas fa-headset fa-3x mb-3"></i>
+                        <h4 class="mb-3">Pelayanan Profesional</h4>
+                        <p>Tim kami siap membantu Anda menemukan solusi terbaik.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
+                    <div class="why-choose-item text-center">
+                        <i class="fas fa-truck fa-3x mb-3"></i>
+                        <h4 class="mb-3">Pengiriman Tepat Waktu</h4>
+                        <p>Kami memastikan produk sampai sesuai jadwal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hubungi Kami -->
+    <section class="contact-section fade-in-on-scroll">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="contact-card text-center fade-in-on-scroll animated slideInUp">
+                        <h2 class="mb-5">Hubungi Kami</h2>
+                        <div class="row g-4">
+                            <!-- Informasi Kontak -->
+                            <div class="col-md-6 col-lg-3">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <h5 class="mb-3">Alamat</h5>
+                                <p>Blok LE 23 RT 06/RW 12, Perum Gpa, Ngijo, Kec. Karang Ploso, Kabupaten Malang, Jawa Timur 65152</p>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <h5 class="mb-3">Telepon</h5>
+                                <p>0821-4403-45608</p>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <h5 class="mb-3">Email</h5>
+                                <p>[Email Perusahaan Anda]</p>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <i class="fab fa-whatsapp contact-icon"></i>
+                                <h5 class="mb-3">WhatsApp</h5>
+                                <p>0821-4403-45608</p>
+                            </div>
+                        </div>
+
+                        <!-- Peta Alamat -->
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-12">
+                                <div class="map-container">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d302.793281964122!2d112.60548445697327!3d-7.898348072785479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788191d173b84b%3A0x48481c08659cc9c5!2sKendedes%20shuttlecock%20malang!5e0!3m2!1sid!2sid!4v1734513459440!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <a href="https://wa.me/+6285648464457?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank" class="btn btn-custom btn-lg mt-4">Kirim Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            &copy; 2024 Kendedes. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Add fade-in effect to elements when they are scrolled into view
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+
+            const fadeElements = document.querySelectorAll('.fade-in-on-scroll');
+            fadeElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
