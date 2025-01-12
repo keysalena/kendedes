@@ -4,491 +4,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kendedes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Navbar Example</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1A4CAD;
-            --secondary-color: #2C7BE5;
-            --light-color: #E9F0F7;
-            --dark-color: #0A2342;
-            --accent-color: #6AA2F0;
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: #007bff;
-        }
-
-        .map-container iframe {
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-
-        body {
-            font-family: 'Inter', 'Arial', sans-serif;
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            transform: skewY(-6deg);
-            transform-origin: top left;
-        }
-
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            font-weight: 700;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            width: 100px;
-            height: 4px;
-            background-color: var(--accent-color);
-            transform: translateX(-50%);
-        }
-
-        .product-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            background-color: white;
-            overflow: hidden;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-card .card-img-top {
-            transition: transform 0.4s ease;
-        }
-
-        .product-card:hover .card-img-top {
-            transform: scale(1.1);
-        }
-
-        .why-choose-section {
-            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
-            color: white;
-            padding: 80px 0;
-        }
-
-        .why-choose-item {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .why-choose-item:hover {
-            transform: scale(1.05);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-section {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .contact-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-icon {
-            color: var(--accent-color);
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-
-        .contact-icon:hover {
-            transform: scale(1.1);
-        }
-
-        .footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-        }
-
-        .btn-custom {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            transition: all 0.3s;
-        }
-
-        .btn-custom:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-    </style>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero .btn-custom {
-            animation: bounce 1.5s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-    </style>
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both;
-        }
-
-        .animated.bounceInDown {
-            animation-name: bounceInDown;
-        }
-
-        .animated.fadeInUp {
-            animation-name: fadeInUp;
-        }
-
-        .animated.zoomIn {
-            animation-name: zoomIn;
-        }
-
-        .animated.slideInUp {
-            animation-name: slideInUp;
-        }
-
-        .animated.pulse {
-            animation-name: pulse;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes bounceInDown {
-
-            0%,
-            60%,
-            75%,
-            90%,
-            100% {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            }
-
-            0% {
-                opacity: 0;
-                transform: translateY(-300px);
-            }
-
-            60% {
-                opacity: 1;
-                transform: translateY(25px);
-            }
-
-            75% {
-                transform: translateY(-10px);
-            }
-
-            90% {
-                transform: translateY(5px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-    </style>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <header class="hero fade-in">
-        <div class="container">
-            <h1 class="display-4 mb-3 fw-bold animate__animated animate__bounceInDown">KENDEDES</h1>
-            <p class="lead mb-4 animated fadeInUp">Mitra terpercaya Anda dalam menyediakan produk berkualitas tinggi untuk kebutuhan industri dan rumah tangga.</p>
-            <a href="#products" class="btn btn-custom btn-lg animated pulse infinite">Lihat Produk</a>
-        </div>
-    </header>
-
-
-    <!-- Tentang Kami -->
-    <section class="container py-5 fade-in-on-scroll">
-        <h2 class="text-center section-title">Tentang Kami</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <p class="text-muted">Kami berdedikasi untuk menghadirkan wood pellet, shuttlecock, dan briket yang memenuhi standar mutu terbaik dan ramah lingkungan. Dengan pengalaman bertahun-tahun di industri ini, kami berkomitmen untuk memberikan pelayanan terbaik dan produk yang sesuai dengan kebutuhan Anda.</p>
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" class="logo-img">
+                <span class="brand-name">KENDEDES</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item active">Home</a></li>
+                <li><a href="#why" class="nav-item">Choose Us</a></li>
+                <li><a href="#about" class="nav-item">About Us</a></li>
+                <li><a href="#services" class="nav-item">Services</a></li>
+                <li><a href="#gallery" class="nav-item">Gallery</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hero" id="home">
+        <img src="img/hero-image.png" alt="Hero Image" class="hero-img">
+    </div>
+    <section class="about-us" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="img/about-us.png" alt="About Us Image">
+            </div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Welcome to <strong>Kendedes</strong>, where energy meets passion and sustainability. We specialize in high-quality badminton equipment, eco-friendly briquettes, and premium wood pellets.</p>
+                <p>Our mission is to empower your lifestyle—whether it's dominating the court, enjoying a perfect barbecue, or keeping your home warm sustainably. With a commitment to quality and customer satisfaction, we aim to be your trusted partner for sports and energy needs.</p>
+                <p>Discover the perfect blend of performance and eco-conscious living with us. Together, let's smash limits, ignite moments, and fuel a brighter future!</p>
             </div>
         </div>
     </section>
-
-    <!-- Produk Kami -->
-    <section id="products" class="container py-5 fade-in-on-scroll">
-        <h2 class="text-center section-title">Produk Kami</h2>
-        <div class="row g-4">
-            <!-- Wood Pellet -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
-                    <img src="img/wood.png" class="card-img-top" alt="Wood Pellet">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Wood Pellet</h5>
-                        <p class="card-text text-muted">Wood pellet adalah bahan bakar ramah lingkungan yang terbuat dari serbuk kayu terkompresi. Ideal untuk sistem pemanas dan pembangkit energi yang efisien dan berkelanjutan.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shuttlecock -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
-                    <img src="img/kok.png" class="card-img-top" alt="Shuttlecock">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Shuttlecock</h5>
-                        <p class="card-text text-muted">Pilihan tepat untuk olahraga bulutangkis Anda, dengan kualitas premium dan presisi tinggi.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Briket -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 fade-in-on-scroll animated zoomIn">
-                    <img src="img/bk.png" class="card-img-top" alt="Briket">
-                    <div class="card-body">
-                        <h5 class="card-title mb-3">Briket</h5>
-                        <p class="card-text text-muted">Energi alternatif yang ekonomis dan ramah lingkungan, ideal untuk kebutuhan rumah tangga dan industri.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mengapa Memilih Kami -->
-    <section class="why-choose-section fade-in-on-scroll">
+    <section class="why-choose-us" id="why">
         <div class="container">
-            <h2 class="text-center mb-5 text-white">Mengapa Memilih Kami?</h2>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
-                    <div class="why-choose-item text-center">
-                        <i class="fas fa-check-circle fa-3x mb-3"></i>
-                        <h4 class="mb-3">Kualitas Terjamin</h4>
-                        <p>Setiap produk melalui proses kontrol kualitas yang ketat.</p>
-                    </div>
+            <h2>Why Choose Us?</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <i class="fas fa-trophy reason-icon"></i>
+                    <h3>High Quality</h3>
+                    <p>We provide premium-quality products that ensure top performance and durability in every use.</p>
                 </div>
-                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
-                    <div class="why-choose-item text-center">
-                        <i class="fas fa-tags fa-3x mb-3"></i>
-                        <h4 class="mb-3">Harga Kompetitif</h4>
-                        <p>Harga terbaik tanpa mengorbankan kualitas.</p>
-                    </div>
+                <div class="reason">
+                    <i class="fas fa-leaf reason-icon"></i>
+                    <h3>Sustainable & Eco-Friendly</h3>
+                    <p>Our products are designed with sustainability in mind, helping you make an eco-conscious choice.</p>
                 </div>
-                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
-                    <div class="why-choose-item text-center">
-                        <i class="fas fa-headset fa-3x mb-3"></i>
-                        <h4 class="mb-3">Pelayanan Profesional</h4>
-                        <p>Tim kami siap membantu Anda menemukan solusi terbaik.</p>
-                    </div>
+                <div class="reason">
+                    <i class="fas fa-headset reason-icon"></i>
+                    <h3>Excellent Customer Service</h3>
+                    <p>We are committed to providing outstanding customer service and support, ensuring your satisfaction.</p>
                 </div>
-                <div class="col-md-3 col-sm-6 fade-in-on-scroll">
-                    <div class="why-choose-item text-center">
-                        <i class="fas fa-truck fa-3x mb-3"></i>
-                        <h4 class="mb-3">Pengiriman Tepat Waktu</h4>
-                        <p>Kami memastikan produk sampai sesuai jadwal.</p>
-                    </div>
+                <div class="reason">
+                    <i class="fas fa-cogs reason-icon"></i>
+                    <h3>Innovative Solutions</h3>
+                    <p>We constantly innovate to bring you the best and most advanced products for every need.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Hubungi Kami -->
-    <section class="contact-section fade-in-on-scroll">
+    <section class="our-services" id="services">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <div class="contact-card text-center fade-in-on-scroll animated slideInUp">
-                        <h2 class="mb-5">Hubungi Kami</h2>
-                        <div class="row g-4">
-                            <!-- Informasi Kontak -->
-                            <div class="col-md-6 col-lg-3">
-                                <i class="fas fa-map-marker-alt contact-icon"></i>
-                                <h5 class="mb-3">Alamat</h5>
-                                <p>Blok LE 23 RT 06/RW 12, Perum Gpa, Ngijo, Kec. Karang Ploso, Kabupaten Malang, Jawa Timur 65152</p>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <h5 class="mb-3">Telepon</h5>
-                                <p>0821-4034-5608</p>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <h5 class="mb-3">Email</h5>
-                                <p>[Email Perusahaan Anda]</p>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <i class="fab fa-whatsapp contact-icon"></i>
-                                <h5 class="mb-3">WhatsApp</h5>
-                                <p>0821-4034-5608</p>
-                            </div>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-box">
+                    <img src="img/badminton.png" alt="Badminton Equipment" class="service-icon">
+                    <h3>Badminton Equipment</h3>
+                    <p>We offer a wide range of badminton gear for all levels of play, from beginners to professionals. Our products are designed to enhance your performance on the court.</p>
+                    <a href="#contact" class="contact-btn">Contact Us</a>
+                </div>
+                <div class="service-box">
+                    <img src="img/briquettes.png" alt="Eco-friendly Briquettes" class="service-icon">
+                    <h3>Eco-friendly Briquettes</h3>
+                    <p>Our briquettes are made from sustainable materials, providing a cleaner, greener alternative to traditional fuels for your heating and cooking needs.</p>
+                    <a href="#contact" class="contact-btn">Contact Us</a>
+                </div>
+                <div class="service-box">
+                    <img src="img/wood-pellets.png" alt="Wood Pellets" class="service-icon">
+                    <h3>Wood Pellets</h3>
+                    <p>Our high-quality wood pellets offer an efficient and eco-friendly fuel source for stoves and boilers, helping you reduce your carbon footprint.</p>
+                    <a href="#contact" class="contact-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our-gallery" id="gallery">
+        <h2>Our Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="img/gallery1.png" alt="Gallery Image 1" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery2.png" alt="Gallery Image 2" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery3.png" alt="Gallery Image 3" class="gallery-img">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery4.png" alt="Gallery Image 4" class="gallery-img">
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <!-- <img src="img/logo.png" alt="Logo" class="footer-logo-img"> -->
+            <div class="footer-logo">
+                <span class="footer-brand-name">KENDEDES</span>
+                <p class="footer-slogan">Smash Every Goal, Ignite Every Moment, Fuel Every Fire!</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <hr class="footer-border">
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> Phone: 0821-4034-5608</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: 0821-4034-5608</li>
+                </ul>
+            </div>
+            <div class="footer-address">
+                <h3>Our Address</h3>
+                <hr class="footer-border">
+                <p>Blok LE 23 RT 06/RW 12, Perum Gpa, Ngijo, Kec. Karang Ploso, Kabupaten Malang, Jawa Timur 65152</p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+                <!-- Google Maps iframe -->
+                <div style="flex: 1;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d302.793281964122!2d112.60548445697327!3d-7.898348072785479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788191d173b84b%3A0x48481c08659cc9c5!2sKendedes%20shuttlecock%20malang!5e0!3m2!1sid!2sid!4v1734513459440!5m2!1sid!2sid"
+                        width="800px" height="410" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <!-- Form Section -->
+                <div style="flex: 1; padding: 20px; background-color: #f8f8f8; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width:450px">
+                    <h3 style="font-size: 24px; color: #f71e1e; margin-bottom: 20px;">Contact Us</h3>
+
+                    <form action="#" method="post">
+                        <div style="margin-bottom: 15px;">
+                            <label for="name" style="font-size: 16px; color: #333; font-weight: bold;">Name:</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
                         </div>
 
-                        <!-- Peta Alamat -->
-                        <div class="row g-4 mt-4">
-                            <div class="col-md-12">
-                                <div class="map-container">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d302.793281964122!2d112.60548445697327!3d-7.898348072785479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788191d173b84b%3A0x48481c08659cc9c5!2sKendedes%20shuttlecock%20malang!5e0!3m2!1sid!2sid!4v1734513459440!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                                <a href="https://wa.me/+6285648464457?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" target="_blank" class="btn btn-custom btn-lg mt-4">Kirim Pesan</a>
-                            </div>
+                        <div style="margin-bottom: 15px;">
+                            <label for="email" style="font-size: 16px; color: #333; font-weight: bold;">Email:</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-top: 5px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;">
                         </div>
-                    </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <label for="message" style="font-size: 16px; color: #333; font-weight: bold;">Message:</label>
+                            <textarea id="message" name="message" required style="width: 100%; padding: 10px; height: 70px; margin-top: 5px; border: 2px solid #ddd; border-radius: 5px; font-size: 16px;"></textarea>
+                        </div>
+
+                        <button type="submit" style="width: 100%; padding: 15px; background-color: #f71e1e; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="footer text-center py-4">
-        <div class="container">
-            &copy; 2024 Kendedes. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
     <script>
-        // Add fade-in effect to elements when they are scrolled into view
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    }
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar animation
+        gsap.from(".navbar", {
+            y: -100,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        // Hero image animation
+        gsap.from(".hero-img", {
+            scale: 1.2,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.out"
+        });
+
+        // About section animations
+        gsap.from(".about-image", {
+            scrollTrigger: {
+                trigger: ".about-image",
+                start: "top center+=100",
+                toggleActions: "play none none reverse"
+            },
+            x: -100,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        gsap.from(".about-text", {
+            scrollTrigger: {
+                trigger: ".about-text",
+                start: "top center+=100",
+                toggleActions: "play none none reverse"
+            },
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        // Why Choose Us section animations
+        gsap.from(".reason", {
+            scrollTrigger: {
+                trigger: ".reasons",
+                start: "top center+=100",
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Services section animations
+        gsap.from(".service-box", {
+            scrollTrigger: {
+                trigger: ".services",
+                start: "top center+=100",
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+
+        // Gallery animations
+        gsap.from(".gallery-item", {
+            scrollTrigger: {
+                trigger: ".gallery-grid",
+                start: "top center+=100",
+                toggleActions: "play none none reverse"
+            },
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Footer animations
+        gsap.from(".footer-content > div", {
+            scrollTrigger: {
+                trigger: ".footer",
+                start: "top bottom-=100",
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Hover animations for buttons
+        const buttons = document.querySelectorAll('.contact-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                gsap.to(btn, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power1.out"
                 });
             });
 
-            const fadeElements = document.querySelectorAll('.fade-in-on-scroll');
-            fadeElements.forEach((el) => observer.observe(el));
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power1.out"
+                });
+            });
+        });
+        // Add this script to offset the scroll position and manage the active class
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Remove active class from all nav items
+                document.querySelectorAll('.nav-item').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to the clicked link
+                e.target.classList.add('active');
+
+                // If the clicked link is not for Home or Contact, apply the scroll offset
+                if (e.target.getAttribute('href') !== "#home" && e.target.getAttribute('href') !== "#contact") {
+                    window.scrollTo({
+                        top: document.querySelector(e.target.getAttribute('href')).offsetTop - 60, // Adjust the offset as needed
+                        behavior: "smooth"
+                    });
+                    e.preventDefault();
+                }
+            });
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
